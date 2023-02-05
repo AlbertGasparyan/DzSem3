@@ -10,8 +10,9 @@ def get_array_random(num):
 
 arg= get_array_random(enter)
 
-def product_num(x):
-    mult_num=x[::len(x)-1]
-    print(mult_num)
+def product_num(lst):
+    l = len(lst) // 2 + 1 if len(lst) % 2 != 0 else len(lst) // 2
+    new_lst = [lst[i] * lst[len(lst) - i - 1] for i in range(l)]
+    print(f'Произведение крайних чисел массива: {new_lst}')
 
 product_num(arg)
